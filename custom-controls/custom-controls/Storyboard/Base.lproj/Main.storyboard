@@ -31,18 +31,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwL-kf-WZk" userLabel="Custom Control" customClass="CustomControl" customModule="custom_controls" customModuleProvider="target">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwL-kf-WZk" userLabel="Custom Control" customClass="CustomControl" customModule="custom_controls" customModuleProvider="target">
+                                <rect key="frame" x="108" y="402.5" width="198" height="91"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="mwL-kf-WZk" secondAttribute="height" multiplier="15:8" id="pX3-5u-Efd"/>
+                                    <constraint firstAttribute="width" secondItem="mwL-kf-WZk" secondAttribute="height" multiplier="15:8" constant="26.5" id="pX3-5u-Efd"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="updateRating:" destination="x1t-KC-AuK" eventType="valueChanged" id="LEo-xb-tiZ"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mwL-kf-WZk" firstAttribute="leading" secondItem="rMq-md-edI" secondAttribute="leading" constant="87" id="FNT-SU-ZSJ"/>
-                            <constraint firstItem="mwL-kf-WZk" firstAttribute="top" secondItem="rMq-md-edI" secondAttribute="top" constant="296" id="c40-MF-28v"/>
+                            <constraint firstItem="mwL-kf-WZk" firstAttribute="leading" secondItem="rMq-md-edI" secondAttribute="leading" constant="108" id="FNT-SU-ZSJ"/>
                             <constraint firstItem="mwL-kf-WZk" firstAttribute="centerY" secondItem="x1m-gN-ucB" secondAttribute="centerY" id="fol-cn-9ql"/>
                             <constraint firstItem="mwL-kf-WZk" firstAttribute="centerX" secondItem="x1m-gN-ucB" secondAttribute="centerX" id="u8K-AD-cRx"/>
                         </constraints>
@@ -52,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myT-B0-Zex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="165"/>
+            <point key="canvasLocation" x="434.78260869565219" y="164.73214285714286"/>
         </scene>
     </scenes>
 </document>
