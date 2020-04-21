@@ -55,7 +55,26 @@ class CustomControl: UIControl {
     }
     
     private func updateValue(at touch: UITouch) {
-        _ = touch.location(in: self)
+        let touchPoint = touch.location(in: self)
+        
+        for label in self.labels {
+            if label.frame.contains(touchPoint) {
+                if self.value != label.tag {
+                self.value = label.tag
+                    
+                    for label in self.labels {
+                        if label.tag <= value {
+                            label.textColor = componentActiveColor
+                        } else {
+                            label.textColor = componentInactiveColor
+                        }
+                    }
+                    
+                    sendActions(for: .valueChanged)
+                    
+                }
+            }
+        }
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -64,7 +83,15 @@ class CustomControl: UIControl {
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        <#code#>
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) {
+            sendActions(for: [.touchDragInside, .valueChanged])
+            updateValue(at: touch)
+            
+        } else {
+            sendActions(for: [.touchDragOutside])
+        }
+        return true
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
